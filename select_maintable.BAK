@@ -1,0 +1,2 @@
+a =  thisform.ex_grid1.p_odatagrid.RecordSource
+SELECT &a

@@ -1,0 +1,11 @@
+SET PATH TO 'F:\PRINT\IAM\LIBRARY\CLAS\'
+PUBLIC nom_ch,naimz_dlin,family,con_bd,cur_n_ceh
+cConnString="driver={SQL Server};SERVER=nitel-hp;uid=ldo;pwd=IfLyyz4sCJ;DATABASE=asyipw;WSID=VFP;APP=VFP;"
+con_bd=SQLSTRINGCONNECT(cConnString, .T.)
+cur_n_ceh = INPUTBOX("002(цех),105(БПП),110(Вед. техн),111(КБ-1)")
+family = ""
+DO update_main_table WITH 'main_cur'
+temp_baz='main_cur'
+naimz_dlin = 'Заявки'
+_screen.WindowState=2
+DO FORM main_window

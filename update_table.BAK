@@ -1,0 +1,30 @@
+PARAMETERS p_form
+IF type("p_form") = 'L'
+cur_table = p_form.ex_grid1.p_odatagrid.RecordSource
+p_form.ex_grid1.p_odatagrid.RecordSource = ''
+DO CASE 
+	CASE cur_n_ceh='117'
+	CASE cur_n_ceh='105'
+		str_query = "select * from zay_tmp_bpp_view"
+	OTHERWISE  
+		str_query = "SELECT * FROM zay_tmp_ceh_view where n_ceh = "+ALLTRIM(STR(VAL(cur_n_ceh)))
+ENDCASE 
+b = SQLEXEC(con_bd,str_query,cur_table)
+AFIELDS(main_cur_fields,cur_table)
+SELECT cur_table
+SCAN
+	FOR i = 1 TO ALEN(main_cur_fields,1)
+		IF ISNULL(main_cur.&main_cur_fields[i,1])
+			IF (main_cur_fields[i,2]#'I')
+				replace &main_cur_fields[i,1] WITH ''
+			ELSE
+				replace &main_cur_fields[i,1] WITH 0
+			ENDIF
+		ENDIF
+	ENDFOR 
+ENDSCAN 
+IF RECCOUNT(cur_table) = 0
+	APPEND BLANK
+ENDIF
+p_form.ex_grid1.p_odatagrid.RecordSource = cur_table
+GO BOTTOM in (cur_table)

@@ -1,0 +1,22 @@
+Visual Class Library d:\project\группировка\mnogostr_grid.vcx has the following errors:
+    Unknown LOHEADERS - Undefined
+    Unknown TBARRAY - Undefined
+    Unknown MAS_TEMP_BAZ - Undefined
+    Proc./Func. SHOW_FOR_LIST - Undefined
+    Proc./Func. HIDE_FOR_LIST - Undefined
+    Unknown TOCOLLECTION - Undefined
+
+Visual Class Library f:\normaw\asuv\libr\xfrxlib.vcx has the following errors:
+    Unknown _XFVFPVERSION - Undefined
+    Unknown XFRX - Undefined
+    Program XFRX - Undefined
+    File XFRXEXPORT.BMP - Undefined
+    File XFRXEXPORT.MSK - Undefined
+    File XFRXEMAIL.BMP - Undefined
+    File XFRXEMAIL.MSK - Undefined
+    Unknown _XFPRINTERPROPERTIES - Undefined
+    File XFRXRTT.BMP - Undefined
+
+Visual Class Library f:\normaw\asuv\libr\_reportlistener.vcx has the following errors:
+    Visual Class Library _GDIPLUS - Undefined
+
